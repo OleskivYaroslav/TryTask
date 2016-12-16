@@ -13,7 +13,7 @@ public class Rectangle implements Figure{
     private double x4;
     private double y4;
 
-    void Rectangle(){
+    public Rectangle(){
         this.x1 = 0;
         this.y1 = 1;
         this.x2 = 1;
@@ -24,7 +24,7 @@ public class Rectangle implements Figure{
         this.y4 = 0;
     }
 
-    void Rectangle(double x1, double y1, double x3, double y3){
+    public Rectangle(double x1, double y1, double x3, double y3){
         this.x1 = x1;
         this.x4 = x1;
         this.y1 = y1;
@@ -45,8 +45,13 @@ public class Rectangle implements Figure{
         return 2 * (Math.abs(x1-x2) + Math.abs(y1-y4));
     }
 
-    public boolean areaMore() {
-        return false;
+
+    public boolean areaMore(double area) {
+        boolean bool = false;
+        if(area< this.getArea()){
+            bool = true;
+        }
+        return  bool;
     }
 
     public boolean areaMore(Circle circle) {

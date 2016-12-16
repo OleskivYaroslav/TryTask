@@ -9,13 +9,13 @@ public class Circle implements Figure {
     private double y1;
     private double R;
 
-    void Circle(){
+    public Circle(){
         this.x1 = 0;
         this.y1 = 0;
         this.R = 1;
     }
 
-    void Circle(double x1, double y1, double R){
+    public Circle(double x1, double y1, double R){
         this.x1 = x1;
         this.y1 = y1;
         this.R = R;
@@ -29,8 +29,12 @@ public class Circle implements Figure {
         return 2*Math.PI*R;
     }
 
-    public boolean areaMore() {
-        return false;
+    public boolean areaMore(double area) {
+        boolean bool = false;
+        if(area< this.getArea()){
+            bool = true;
+        }
+        return  bool;
     }
 
     public boolean areaMore(Circle circle) {
